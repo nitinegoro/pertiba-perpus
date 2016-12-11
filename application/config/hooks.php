@@ -11,3 +11,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
 */
+
+$hook['display_override'] = array(
+    'class' => 'Minifyhtml',
+    'function' => 'output',
+    'filename' => 'Minifyhtml.php',
+    'filepath' => 'hooks',
+    'params' => array()
+);
+
+$hook['post_controller_constructor'] = array(
+    'class'    => 'LanguageLoader',
+    'function' => 'initialize',
+    'filename' => 'LanguageLoader.php',
+    'filepath' => 'hooks'
+);
